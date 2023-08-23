@@ -26,6 +26,7 @@ plt.xlabel('petal length')
 plt.ylabel('petal width')
 plt.scatter(petalLength,petalWidth, c=colors_r)
 plt.title("Iris")
+plt.show()
 
 estimator = KMeans(n_clusters=3, n_init='auto').fit(data)                       #聚类
 label_pred = estimator.labels_         #获取聚类标签
@@ -56,4 +57,5 @@ X = range(1,9)
 plt.xlabel('k')
 plt.ylabel('SSE')
 plt.plot(X,SSE,'o-')
+plt.title("SSE")
 plt.show()
