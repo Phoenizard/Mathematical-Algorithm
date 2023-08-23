@@ -24,8 +24,8 @@ def centerPoint(point_set):
 
 
 def myKMeans(n_clusters):
-    # key_index = random.sample(range(1, len(data)), n_clusters)
-    key_index = [20, 80, 140]
+    key_index = random.sample(range(1, len(data)), n_clusters)
+    # key_index = [20, 80, 140]
     is_change = True
     key_point = []
     group = [[] for _ in range(n_clusters)]
@@ -65,7 +65,7 @@ def myKMeans(n_clusters):
 
 
 if __name__ == '__main__':
-    n = 3
+    n = 4
     g, k = myKMeans(n)
     predicted = []
     for i in data:
@@ -73,8 +73,8 @@ if __name__ == '__main__':
             if i in g[j]:
                 predicted.append(j)
                 break
-    print(len(data))
-    print(len(predicted))
+
+    print(predicted)
 
     colors_p = []
     for i in predicted:
@@ -90,3 +90,5 @@ if __name__ == '__main__':
     plt.ylabel('petal width')
     plt.scatter(petalLength, petalWidth, c=colors_p)
     plt.show()
+
+
