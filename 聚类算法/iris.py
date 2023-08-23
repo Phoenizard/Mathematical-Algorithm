@@ -45,3 +45,15 @@ plt.ylabel('petal width')
 plt.scatter(petalLength,petalWidth, c=colors_p)
 
 plt.show()
+
+'利用SSE选择k'
+SSE = []  # 存放每次结果的误差平方和
+for k in range(1,9):
+    estimator = KMeans(n_clusters=k)  # 构造聚类器
+    estimator.fit(data)
+    SSE.append(estimator.inertia_) # estimator.inertia_获取聚类准则的总和
+X = range(1,9)
+plt.xlabel('k')
+plt.ylabel('SSE')
+plt.plot(X,SSE,'o-')
+plt.show()
