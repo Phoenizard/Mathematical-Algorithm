@@ -1,4 +1,4 @@
-from config import maxgen, sizepop, pcross, pmutation, bound
+from config import maxgen, sizepop
 from Individual import Individuals
 import operation as op
 import matplotlib.pyplot as plt
